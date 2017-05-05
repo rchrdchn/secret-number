@@ -1,38 +1,50 @@
+// number of tries every person begins with
 var tries = 0;
 
-var $firstGuess = $(".input").value;
-var $secretNumber = Math.floor(Math.random() * $firstGuess) + 1;
-var $userInput = $(".input").value;
+// grab user input value
+var userInput = document.getElementById("input").value;
+// throws a random number for person to guess
+var secretNumber = Math.floor(Math.random() * userInput) + 1;
 
+// function to reset game when player wins or loses
 function reset() {
 	tries = 0;
-	var $firstGuess = $(".input").value;
-	var $secretNumber = Math.floor(Math.random() * $firstGuess) + 1;
+
+	var userInput = document.getElementById("input").value;
+	var secretNumber = Math.floor(Math.random() * userInput) + 1;
 }
 
-if ($userInput > $secretNumber) {
-	console.log("Your " + $userInput + " is too high");
+if (userInput > secretNumber) { // if player input is too high
+	
+	console.log("Your " + userInput + " is too high");
 	tries++;
-} else if ($userInput < $secretNumber) {
-	console.log("Your " + $userInput + " is too low");
+	
+	if (tries = 9) {
+	console.log("This is your last try. Good luck!");
+	}
+
+} else if (userInput < secretNumber) { // if player input is too low
+	console.log("Your " + userInput + " is too low");
 	tries++;
-} else {
+} else { // if player wins, game resets
 	console.log("You won in " + tries);
 	reset();
 }
 
-if (tries = 9) {
-	console.log("This is your last try. Good luck!");
-}
+if (tries = 10) { // if player reaches 10 tries, loses
 
-if (tries = 10) {
 	console.log("You lost!")
 	reset();
+
 }
 
-var $button = $(".button");
+var button = document.getElementById("button");
+// adds event listener to button
+button.addEventListener("click", function(){
+	console.log("works")
+	// reset whatever is inside input
 
-$button
+})
 
 var timeNow = document.getElementById("time")
 var monthNow = document.getElementById("month")
