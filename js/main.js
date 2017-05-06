@@ -1,10 +1,12 @@
 // number of tries every person begins with
-var tries = 0;
+var tries = 1;
 
 var secretNumberShow = document.getElementById("show");
 // throws a random number for person to guess
 var secretNumber = Math.floor(Math.random() * 100) + 1;
 secretNumberShow.innerHTML = secretNumber;
+
+var showInput = document.getElementById("showInput");
 
 var button = document.getElementById("button");
 // adds event listener to button
@@ -12,12 +14,13 @@ button.addEventListener("click", function(){
 	
 	// grab user input value
 	var userInput = document.getElementById("input").value;
+	showInput.innerHTML = userInput;
 	
 	if (userInput > secretNumber) { // if player input is too high
-		console.log("Your " + userInput + " is too high. " + tries);
+		console.log("Your " + userInput + " is too high");
 		tries++;
 	} else if (userInput < secretNumber) { // if player input is too low
-		console.log("Your " + userInput + " is too low. " + tries);
+		console.log("Your " + userInput + " is too low");
 		tries++;
 	} else { // if player wins, game resets
 		console.log("You won in " + tries + " tries!");
@@ -36,8 +39,7 @@ button.addEventListener("click", function(){
 
 // function to reset game when player wins or loses
 function reset() {
-	tries = 0;
-
+	tries = 1;
 	var userInput = document.getElementById("input").value;
 	var secretNumber = Math.floor(Math.random() * 100) + 1;
 }
