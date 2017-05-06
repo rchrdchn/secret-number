@@ -10,7 +10,6 @@ var showInput = document.getElementById("showInput");
 
 var showMessage = document.getElementById("message");
 
-
 var button = document.getElementById("button");
 // adds event listener to button
 button.addEventListener("click", function(){
@@ -20,21 +19,22 @@ button.addEventListener("click", function(){
 	showInput.append(" " + userInput + " ");
 	
 	if (userInput > secretNumber) { // if player input is too high
-		showMessage.innerHTML = "Your guess is too high";
+		showMessage.innerHTML = "Your guess is too high. Try lower.";
 		tries++;
 	} else if (userInput < secretNumber) { // if player input is too low
-		showMessage.innerHTML = "Your guess is too low";
+		showMessage.innerHTML = "Your guess is too low. Try higher.";
 		tries++;
 	} else { // if player wins, game resets
-		showMessage.innerHTML = "You won in " + tries + " tri!";
+		showMessage.innerHTML = "YOU WON!";
 		reset();
 	}
 	
 	// if player reaches 10 tries, loses
-	// if (tries = 10) { 
-	// 	console.log("You lost!")
-	// 	reset();
-	// }
+	if (tries >= 10) { 
+		showMessage.innerHTML = "YOU LOST :(";
+		button.disabled = true;
+		var changeButton = button.innerHTML = "Reset";
+	}
 
 	// reset whatever is inside input
 

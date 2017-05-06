@@ -5,10 +5,18 @@ body {
 	color: #fff;
 }
 
-#instruction {
-	margin-top: 30px;
+.guess-number {
+	margin-bottom: 30px;
+}
+
+.instruction {
+	margin-top: 20px;
 	font-family: "Helvetica", serif;
 	line-height: 22px;
+}
+
+.random {
+	text-decoration: line-through;
 }
 
 #input {
@@ -19,7 +27,7 @@ body {
 	height: 200px;
 	padding: 30px;
 	color: white;
-	font-size: 48px;
+	font-size: 56px;
 	font-family: "Helvetica", serif;
 	border-left: none;
 	border-top: none;
@@ -27,14 +35,27 @@ body {
 	text-align: center;
 }
 
+.guesses {
+	background-color: #981423;
+	opacity: 0.5;
+	border: 1px solid #fff;
+	display: inline-block;
+	padding: 2px 15px 15px 15px;
+	border-radius: 5px;
+}
+
 #showInput {
 	display: inline;
 	padding: 0px 15px;
+	font-size: 18px;
 }
 
 #message {
 	font-family: "Helvetica", sans-serif;
-	font-size: 16px;
+	font-size: 28px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+	color: #fff;
 }
+
+
