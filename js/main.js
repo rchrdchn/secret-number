@@ -1,10 +1,5 @@
-// function to reset game when player wins or loses
-function reset() {
-	tries = 0;
-
-	var userInput = document.getElementById("input").value;
-	var secretNumber = Math.floor(Math.random() * 100) + 1;
-}
+// number of tries every person begins with
+var tries = 0;
 
 var secretNumberShow = document.getElementById("show");
 // throws a random number for person to guess
@@ -14,20 +9,18 @@ secretNumberShow.innerHTML = secretNumber;
 var button = document.getElementById("button");
 // adds event listener to button
 button.addEventListener("click", function(){
-	// number of tries every person begins with
-	var tries = 0;
+	
 	// grab user input value
 	var userInput = document.getElementById("input").value;
 	
-
 	if (userInput > secretNumber) { // if player input is too high
-		console.log("Your " + userInput + " is too high");
+		console.log("Your " + userInput + " is too high. " + tries);
 		tries++;
 	} else if (userInput < secretNumber) { // if player input is too low
-		console.log("Your " + userInput + " is too low");
+		console.log("Your " + userInput + " is too low. " + tries);
 		tries++;
 	} else { // if player wins, game resets
-		console.log("You won in " + tries);
+		console.log("You won in " + tries + " tries!");
 		reset();
 	}
 	
@@ -40,6 +33,14 @@ button.addEventListener("click", function(){
 	// reset whatever is inside input
 
 })
+
+// function to reset game when player wins or loses
+function reset() {
+	tries = 0;
+
+	var userInput = document.getElementById("input").value;
+	var secretNumber = Math.floor(Math.random() * 100) + 1;
+}
 
 // set date and time
 
