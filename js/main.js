@@ -6,6 +6,11 @@ function reset() {
 	var secretNumber = Math.floor(Math.random() * 100) + 1;
 }
 
+var secretNumberShow = document.getElementById("show");
+// throws a random number for person to guess
+var secretNumber = Math.floor(Math.random() * 100) + 1;
+secretNumberShow.innerHTML = secretNumber;
+
 var button = document.getElementById("button");
 // adds event listener to button
 button.addEventListener("click", function(){
@@ -13,8 +18,7 @@ button.addEventListener("click", function(){
 	var tries = 0;
 	// grab user input value
 	var userInput = document.getElementById("input").value;
-	// throws a random number for person to guess
-	var secretNumber = Math.floor(Math.random() * 100) + 1;
+	
 
 	if (userInput > secretNumber) { // if player input is too high
 		console.log("Your " + userInput + " is too high");
