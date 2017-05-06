@@ -1,4 +1,40 @@
 body {
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 30px;
+	background-color: #222;
+	color: #fff;
+}
+
+#instruction {
+	margin-top: 30px;
+	font-family: "Helvetica", serif;
+	line-height: 22px;
+}
+
+#input {
+	margin-bottom: 15px;
+	outline: none;
+	background-color: #222;
+	width: 200px;
+	height: 200px;
+	padding: 30px;
+	color: white;
+	font-size: 48px;
+	font-family: "Helvetica", serif;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+	text-align: center;
+}
+
+#showInput {
+	display: inline;
+	padding: 0px 15px;
+}
+
+#message {
+	font-family: "Helvetica", sans-serif;
+	font-size: 16px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }

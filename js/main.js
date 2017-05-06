@@ -8,22 +8,25 @@ secretNumberShow.innerHTML = secretNumber;
 
 var showInput = document.getElementById("showInput");
 
+var showMessage = document.getElementById("message");
+
+
 var button = document.getElementById("button");
 // adds event listener to button
 button.addEventListener("click", function(){
 	
 	// grab user input value
 	var userInput = document.getElementById("input").value;
-	showInput.innerHTML = userInput;
+	showInput.append(" " + userInput + " ");
 	
 	if (userInput > secretNumber) { // if player input is too high
-		console.log("Your " + userInput + " is too high");
+		showMessage.innerHTML = "Your guess is too high";
 		tries++;
 	} else if (userInput < secretNumber) { // if player input is too low
-		console.log("Your " + userInput + " is too low");
+		showMessage.innerHTML = "Your guess is too low";
 		tries++;
 	} else { // if player wins, game resets
-		console.log("You won in " + tries + " tries!");
+		showMessage.innerHTML = "You won in " + tries + " tri!";
 		reset();
 	}
 	
