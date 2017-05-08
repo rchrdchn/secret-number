@@ -6,13 +6,13 @@ body {
 }
 
 .guess-number {
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 
 .instruction {
-	margin-top: 20px;
+	margin-top: 10px;
 	font-family: "Helvetica", serif;
-	line-height: 22px;
+	line-height: 26px;
 }
 
 .random {
@@ -23,8 +23,8 @@ body {
 	margin-bottom: 15px;
 	outline: none;
 	background-color: #222;
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 100px;
 	padding: 30px;
 	color: white;
 	font-size: 56px;
@@ -58,4 +58,11 @@ body {
 	color: #fff;
 }
 
+#show {
+	font-size: 22px;
+}
 
+#secretNumber {
+	font-size: 26px;
+	color: green;
+}

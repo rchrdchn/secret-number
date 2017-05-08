@@ -1,14 +1,14 @@
 // number of tries every person begins with
 var tries = 1;
 
-var secretNumberShow = document.getElementById("show");
+var showTries = document.getElementById("show");
 // throws a random number for person to guess
 var secretNumber = Math.floor(Math.random() * 100) + 1;
-secretNumberShow.innerHTML = secretNumber;
 
 var showInput = document.getElementById("showInput");
 
 var showMessage = document.getElementById("message");
+var showSecretNumber = document.getElementById("secretNumber");
 
 var button = document.getElementById("button");
 // adds event listener to button
@@ -18,6 +18,13 @@ button.addEventListener("click", function(){
 	var userInput = document.getElementById("input").value;
 	showInput.append(" " + userInput + " ");
 	
+	if (tries < 2) {
+		showTries.innerHTML = "You have tried: " + tries + " time";	
+	} else {
+		showTries.innerHTML = "You have tried: " + tries + " times";
+	}
+	
+	
 	if (userInput > secretNumber) { // if player input is too high
 		showMessage.innerHTML = "Your guess is too high. Try lower.";
 		tries++;
@@ -26,12 +33,13 @@ button.addEventListener("click", function(){
 		tries++;
 	} else { // if player wins, game resets
 		showMessage.innerHTML = "YOU WON!";
-		reset();
+		showMessage.css("font-size", "46px;");
 	}
 	
 	// if player reaches 10 tries, loses
-	if (tries >= 10) { 
+	if (tries >= 11) { 
 		showMessage.innerHTML = "YOU LOST :(";
+		showSecretNumber.innerHTML = "Secret number is: " + secretNumber;
 		button.disabled = true;
 		var changeButton = button.innerHTML = "Reset";
 	}
