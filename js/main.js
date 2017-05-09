@@ -1,7 +1,6 @@
 // number of tries every person begins with
 var tries = 1;
-// number of tries left
-var triesLeft = 10;
+var timer = 11;
 
 // grabbing elements from DOM
 var showTries = document.getElementById("show");
@@ -14,12 +13,29 @@ var button = document.getElementById("button");
 var secretNumber = Math.floor(Math.random() * 100) + 1;
 
 // adds event listener to button
-button.addEventListener("click", function(e){
-	e.preventDefault();
+button.addEventListener("click", function(){
+	// e.preventDefault();
 	// grab user input value
 	var userInput = document.getElementById("input").value;
 	// append last inputs to last inputs section and displays an array in the DOM
 	showInput.append(" " + userInput + " ");
+
+	// countdown timer 60 seconds when player click "submit guess"
+	if (tries <= 1) {
+		var timerStart = setInterval(function() {
+		var countDownTimer = document.getElementById("countDownTimer");
+		var showTimer = countDownTimer.innerHTML = "00:" + timer--;	    
+
+		if (timer <= -1) {
+	    	countDownTimer.innerHTML = "EXPIRED!";
+	    	showMessage.innerHTML = "YOU LOST :(";
+			showSecretNumber.innerHTML = "Secret number is: " + secretNumber;
+			button.disabled = true;
+			var changeButton = button.innerHTML = "Reset";
+	    	clearInterval(timerStart)
+	    }
+	}, 1000);
+	}
 
 	// if tries is less than 1, shows singular time, else shows plural time(s)
 	if (tries < 2) {
@@ -40,27 +56,15 @@ button.addEventListener("click", function(e){
 	
 	// if player reaches 10 tries, loses
 	if (tries >= 11) { 
+		var changeButton = button.innerHTML = "Reset";
+		var countDownTimer = document.getElementById("countDownTimer");
 		showMessage.innerHTML = "YOU LOST :(";
 		showSecretNumber.innerHTML = "Secret number is: " + secretNumber;
 		button.disabled = true;
-		var changeButton = button.innerHTML = "Reset";
+		countDownTimer.innerHTML = "EXPIRED!";
 	}
 
-	// countdown timer 60 seconds when player click "submit guess"
-	var timer = 59;
-
-	var timerStart = setInterval(function() {
-	    var countDownTimer = document.getElementById("countDownTimer");
-		var showTimer = countDownTimer.innerHTML = "00:" + timer--;
-	    if (timer == -1) {
-	    	clearInterval(timerStart)
-	    }
-
-	    if (timer < 10) {
-	    	timer = "0" + timer;
-	    }
-
-	}, 1000);
+	
 	// reset whatever is inside input
 
 })

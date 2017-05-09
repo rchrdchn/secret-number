@@ -67,3 +67,7 @@ body {
 	font-size: 26px;
 	color: green;
 }
+
+#countDownTimer {
+	color: red;
+}
