@@ -1,24 +1,26 @@
 // number of tries every person begins with
 var tries = 1;
+// number of tries left
 var triesLeft = 10;
 
+// grabbing elements from DOM
 var showTries = document.getElementById("show");
+var showInput = document.getElementById("showInput");
+var showMessage = document.getElementById("message");
+var showSecretNumber = document.getElementById("secretNumber");
+var button = document.getElementById("button");
+
 // throws a random number for person to guess
 var secretNumber = Math.floor(Math.random() * 100) + 1;
 
-var showInput = document.getElementById("showInput");
-
-var showMessage = document.getElementById("message");
-var showSecretNumber = document.getElementById("secretNumber");
-
-var button = document.getElementById("button");
 // adds event listener to button
 button.addEventListener("click", function(e){
 	e.preventDefault();
 	// grab user input value
 	var userInput = document.getElementById("input").value;
+	// append last inputs to last inputs section and displays an array in the DOM
 	showInput.append(" " + userInput + " ");
-	
+
 	// if tries is less than 1, shows singular time, else shows plural time(s)
 	if (tries < 2) {
 		showTries.innerHTML = "You have tried: " + tries + " time";	
@@ -29,11 +31,9 @@ button.addEventListener("click", function(e){
 	if (userInput > secretNumber) { // if player input is too high
 		showMessage.innerHTML = "Your guess is too high. Try lower.";
 		tries++;
-		
 	} else if (userInput < secretNumber) { // if player input is too low
 		showMessage.innerHTML = "Your guess is too low. Try higher.";
 		tries++;
-		
 	} else { // if player wins, game resets
 		showMessage.innerHTML = "YOU'RE A GENIUS!";
 	}
@@ -46,6 +46,21 @@ button.addEventListener("click", function(e){
 		var changeButton = button.innerHTML = "Reset";
 	}
 
+	// countdown timer 60 seconds when player click "submit guess"
+	var timer = 59;
+
+	var timerStart = setInterval(function() {
+	    var countDownTimer = document.getElementById("countDownTimer");
+		var showTimer = countDownTimer.innerHTML = "00:" + timer--;
+	    if (timer == -1) {
+	    	clearInterval(timerStart)
+	    }
+
+	    if (timer < 10) {
+	    	timer = "0" + timer;
+	    }
+
+	}, 1000);
 	// reset whatever is inside input
 
 })
@@ -56,12 +71,6 @@ button.addEventListener("click", function(e){
 		var userInput = document.getElementById("input").value;
 		var secretNumber = Math.floor(Math.random() * 100) + 1;
 	}
-
-// countdown timer 60 seconds when player click "submit guess"
-
-var timer = "01:00";
-var countDownTimer = document.getElementById("countDownTimer");
-var showTimer = countDownTimer.innerHTML = timer;
 
 
 // set date and time
