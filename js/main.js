@@ -57,6 +57,13 @@ button.addEventListener("click", function(e){
 		var secretNumber = Math.floor(Math.random() * 100) + 1;
 	}
 
+// countdown timer 60 seconds when player click "submit guess"
+
+var timer = "01:00";
+var countDownTimer = document.getElementById("countDownTimer");
+var showTimer = countDownTimer.innerHTML = timer;
+
+
 // set date and time
 
 // var timeNow = document.getElementById("time")
