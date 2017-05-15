@@ -1,8 +1,24 @@
-body {
+html, body{
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
 	text-align: center;
 	margin-top: 30px;
-	background-color: #222;
+	/* background-color: #607D8B; */
 	color: #fff;
+	content: '';
+	display: block;
+	background-image: linear-gradient(90deg, rgba(255,255,255,.25) 1px, rgba(0,0,0,0) 1px), linear-gradient(0deg, rgba(255,255,255,.25) 1px, rgba(0,0,0,0) 1px);
+	background-position: 0px 1px;
+	background-repeat: repeat;
+	background-size: 40px 40px;
+	background: -webkit-linear-gradient(#607D8B, #37474F); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#607D8B, #37474F); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#607D8B, #37474F); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#607D8B, #37474F); /* Standard syntax (must be last) */
+}
 }
 
 .guess-number {
@@ -20,18 +36,15 @@ body {
 }
 
 #input {
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	outline: none;
-	background-color: #222;
+	background-color: #546E7A;
 	width: 150px;
 	height: 100px;
 	padding: 30px;
 	color: white;
 	font-size: 56px;
 	font-family: "Helvetica", serif;
-	border-left: none;
-	border-top: none;
-	border-right: none;
 	text-align: center;
 }
 

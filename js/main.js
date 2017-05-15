@@ -34,7 +34,7 @@ button.addEventListener("click", function(){
 			var changeButton = button.innerHTML = "Reset";
 	    	clearInterval(timerStart)
 	    }
-	}, 1000);
+		}, 1000);
 	}
 
 	// if tries is less than 1, shows singular time, else shows plural time(s)
@@ -53,8 +53,7 @@ button.addEventListener("click", function(){
 	} else { // if player wins, game resets
 		showMessage.innerHTML = "YOU'RE A GENIUS!";
 		showTries.innerHTML = "You WON in " + tries + " tries";
-		var countDownTimer = document.getElementById("countDownTimer");
-		var showTimer = countDownTimer.innerHTML = " ";	    
+		document.getElementById("countDownTimer").style.display = "none";
 	}
 	
 	// if player reaches 10 tries, loses
@@ -67,48 +66,6 @@ button.addEventListener("click", function(){
 		countDownTimer.innerHTML = "EXPIRED!";
 	}
 
-	
-	// reset whatever is inside input
-
 })
 
-// function to reset game when player wins or loses
-	function reset() {
-		tries = 1;
-		var userInput = document.getElementById("input").value;
-		var secretNumber = Math.floor(Math.random() * 100) + 1;
-	}
-
-
-// set date and time
-
-// var timeNow = document.getElementById("time")
-// var monthNow = document.getElementById("month")
-
-// function getTime() {
-// 	var today = new Date();
-// 	var hourNow = today.getHours();
-// 	var minute = today.getMinutes();
-// 	var second = today.getSeconds();
-// 	var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-// 	var thisMonth = month[today.getMonth()]
-// 	var day = today.getDay();
-// 	var year = today.getFullYear();
-
-// 	if (second < 10) {
-// 		second = "0" + second;
-// 	}
-
-// 	if (minute < 10) {
-// 		minute = "0" + minute;
-// 	}	
-	
-// 	var allTime = hourNow + ":" + minute + ":" + second;
-// 	var dateNow = thisMonth  + " " + day + ", " + year;
-	
-// 	timeNow.innerHTML = allTime;
-// 	monthNow.innerHTML = dateNow;
-// }
-
-// setInterval(getTime,1000);
 
