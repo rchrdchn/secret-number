@@ -1,6 +1,6 @@
 // number of tries every person begins with
 var tries = 1;
-var timer = 11;
+var timer = 59;
 
 // grabbing elements from DOM
 var showTries = document.getElementById("show");
@@ -19,11 +19,11 @@ button.addEventListener("click", function(){
 	var userInput = document.getElementById("input").value;
 	// append last inputs to last inputs section and displays an array in the DOM
 	showInput.append(" " + userInput + " ");
+	var countDownTimer = document.getElementById("countDownTimer");
 
 	// countdown timer 60 seconds when player click "submit guess"
 	if (tries <= 1) {
 		var timerStart = setInterval(function() {
-		var countDownTimer = document.getElementById("countDownTimer");
 		var showTimer = countDownTimer.innerHTML = "00:" + timer--;	    
 
 		if (timer <= -1) {
@@ -52,6 +52,9 @@ button.addEventListener("click", function(){
 		tries++;
 	} else { // if player wins, game resets
 		showMessage.innerHTML = "YOU'RE A GENIUS!";
+		showTries.innerHTML = "You WON in " + tries + " tries";
+		var countDownTimer = document.getElementById("countDownTimer");
+		var showTimer = countDownTimer.innerHTML = " ";	    
 	}
 	
 	// if player reaches 10 tries, loses
