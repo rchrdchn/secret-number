@@ -1,24 +1,15 @@
 html, body{
-	height:100%;
-	width:100%;
-	margin:0;
-	padding:0;
-	overflow:hidden;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 	text-align: center;
-	margin-top: 30px;
-	/* background-color: #607D8B; */
+	padding-top: 15px;
 	color: #fff;
-	content: '';
-	display: block;
-	background-image: linear-gradient(90deg, rgba(255,255,255,.25) 1px, rgba(0,0,0,0) 1px), linear-gradient(0deg, rgba(255,255,255,.25) 1px, rgba(0,0,0,0) 1px);
-	background-position: 0px 1px;
-	background-repeat: repeat;
-	background-size: 40px 40px;
-	background: -webkit-linear-gradient(#607D8B, #37474F); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#607D8B, #37474F); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#607D8B, #37474F); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#607D8B, #37474F); /* Standard syntax (must be last) */
-}
+	background: -webkit-linear-gradient(#7B1FA2, #E1BEE7); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#7B1FA2, #E1BEE7); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#7B1FA2, #E1BEE7); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#7B1FA2, #E1BEE7); /* Standard syntax (must be last) */
 }
 
 .guess-number {
@@ -26,9 +17,14 @@ html, body{
 }
 
 .instruction {
-	margin-top: 10px;
+	margin: 20px 0px;
 	font-family: "Helvetica", serif;
-	line-height: 26px;
+	text-decoration: underline;
+}
+
+.instruction-text {
+	margin-top: 15px;
+	font-family: "Helvetica", serif;
 }
 
 .random {
@@ -38,9 +34,9 @@ html, body{
 #input {
 	margin-bottom: 20px;
 	outline: none;
-	background-color: #546E7A;
-	width: 150px;
-	height: 100px;
+	background-color: #7B1FA2;
+	width: 200px;
+	height: 150px;
 	padding: 30px;
 	color: white;
 	font-size: 56px;
@@ -49,26 +45,30 @@ html, body{
 }
 
 .guesses {
-	margin-top: 30px;
-	background-color: #981423;
+	margin-top: 10px;
+	background-color: #FDD835;
 	opacity: 0.5;
-	border: 1px solid #fff;
+	border: 3px solid #fff;
 	display: inline-block;
 	padding: 2px 15px 15px 15px;
 	border-radius: 5px;
 }
 
+#lastNumbers {
+	color: #000;
+}
+
 #showInput {
 	display: inline;
-	padding: 0px 15px;
-	font-size: 18px;
+	padding: 0px 30px;
+	color: #000;
 }
 
 #message {
 	font-family: "Helvetica", sans-serif;
 	font-size: 28px;
 	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
 	color: #fff;
 }
 
@@ -82,5 +82,5 @@ html, body{
 }
 
 #countDownTimer {
-	color: red;
+	color: #B2FF59;
 }
